@@ -1,0 +1,36 @@
+{% load static %}
+<section id="project_{{ project.id }}" class="main">
+    <div class="first">
+        <div>
+            <img src="{% static 'images/menut.png' %}">
+        </div>
+        <div>
+            <span class="m-words project-title">{{ project.name }}</span>
+        </div>
+        <div>
+            <a class="a-proj-name-change" href="javascript:project_init_change_name({{ project.id }});">
+                <img src="{% static 'images/notet.png' %}">
+            </a>
+        </div>
+        <div>
+            <a href="javascript:project_delete({{ project.id }})">
+                <img src="{% static 'images/backett.png' %}">
+            </a>
+        </div>
+    </div>
+    <div class="second">
+        <div>
+            <img src="{% static 'images/plust.png' %}">
+        </div>
+        <div>
+            <input type="text" name="name" placeholder="Start typing here to create a task">
+        </div>
+        <button onclick="add_task({{ project.id }})">
+            <span class="add-words valign-middle">Add Task</span>
+        </button>
+        <div>
+        </div>
+    </div>
+    <ul class="tasks_list">
+    </ul>
+</section>
