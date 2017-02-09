@@ -30,7 +30,7 @@ class Task(models.Model):
     deadline = models.DateField(blank=True, null=True)
 
     def __str__(self):
-        return f"{self.name} ({self.project.name})"
+        return "{} ({})".format(self.name, self.project.name)
 
     @property
     def is_past_deadline(self):
